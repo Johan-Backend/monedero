@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: monedero-db
+    environment:
+      - POSTGRES_DB=monedero_db
+      - POSTGRES_PASSWORD=monedero-proyecto
+    ports:
+      - "5432:5432"
+    volumes:
+      - monedero-data:/var/lib/postgresql/data
+
+volumes:
+  monedero-data:
